@@ -1,0 +1,80 @@
+	<script type="text/javascript">
+			// click handler function
+			function clickHandler1(event) {
+				var msg =
+					'ClickHandler1: click triggered by ' +
+					event.target.id +
+					' at location ' +
+					event.clientX +
+					',' +
+					event.clientY;
+				document.getElementById('message').innerHTML = msg;
+			}
+
+			// called when window loaded
+			window.addEventListener('load', function(event) {
+				// click handler function
+				function clickHandler2(event) {
+					var msg =
+						'ClickHandler2: click triggered by ' +
+						event.target.id +
+						' at location ' +
+						event.clientX +
+						',' +
+						event.clientY;
+					document.getElementById('message').innerHTML = msg;
+				}
+
+				document.getElementById('test2').onclick = clickHandler2;
+
+				// All new functions must be declared here (inside the window onload event)
+
+				// Handle the mouseover event here for the element with id message
+				function mouseOverHandler() {
+                                    var item = document.getElementById("message");
+item.addEventListener("mouseover", func, false);
+item.addEventListener("mouseout", func1, false);
+
+function func()
+{  
+   item.setAttribute("style", "background-color:pink;");
+}
+
+function func1()
+{  
+   item.setAttribute("style", "background-color:white;");
+}
+					// Select 1 of the box (test1 or test2) and make it pink
+				}
+
+				// Handle the mouseout event here
+				function mouseOutHandler() {
+					// select both boxes, make the pink one to become white, the white one to become light blue
+				}
+                
+			});
+		</script>
+		<style type="text/css">
+			div {
+				margin: 10px;
+				padding: 5px;
+				border: 1px solid black;
+			}
+			#test1,
+			#test2 {
+				cursor: pointer;
+			}
+			td {
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="test1" onclick="clickHandler1(event);">
+			Click handler 1 added in HTML.
+		</div>
+		<div id="test2">Click handler 2 added in JavaScript.</div>
+		<div id="message"><br /></div>
+	</body>
+</html>
+		
