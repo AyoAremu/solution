@@ -5,11 +5,11 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+	<head>
+		<title>TODO supply a title</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 		<script type="text/javascript">
 			// click handler function
 			function clickHandler1(event) {
@@ -23,105 +23,122 @@ and open the template in the editor.
 				document.getElementById('message').innerHTML = msg;
 			}
 
-			window.addEventListener("load", function(event) {
+			window.addEventListener('load', function(event) {
+				// Click handler function
+				function box1(event) {
+					var msg =
+						'ClickHandler1: click triggered by ' +
+						event.target.id +
+						' at location ' +
+						event.clientX +
+						',' +
+						event.clientY;
+					document.getElementById('message').innerHTML = msg;
+				}
+
+				// click handler function
+				function box2(event) {
+					var msg =
+						'ClickHandler2: click triggered by ' +
+						event.target.id +
+						' at location ' +
+						event.clientX +
+						',' +
+						event.clientY;
+					document.getElementById('message').innerHTML = msg;
+				}
+
+                document.getElementById('box1').onclick = box1;
+                document.getElementById('box2').onclick = box2;
+
+                document.getElementById('message').addEventListener('mouseover',mouseOver)
+                document.getElementById('message').addEventListener('mouseout',mouseOut)
                 
-            // Click handler function
-                function message(event) {
-                var msg = "ClickHandler1: click triggered by " + event.target.id + " at location " + event.clientX + "," + event.clientY;
-              document.getElementById("message2").innerHTML = msg;
-           }
                 
-               // click handler function
-                function message1(event) {
-                 var msg = "ClickHandler2: click triggered by " + event.target.id + " at location " + event.clientX + "," + event.clientY;
-                  document.getElementById("message2").innerHTML = msg;
-                }
+			});
 
-             document.getElementById(
-                   "message").onclick = message;
-              document.getElementById(
-                   "message1").onclick = message1;
-           });
-            
-            
-          function mouseOver(){
-document.getElementById("message").style.backgroundColor = "pink";
-  document.getElementById("message1").style.backgroundColor = "white";
-  document.getElementById("message").style.color = "blue";
-        document.getElementById("message1").style.color = "blue";
-          }
+			function mouseOver() {
+				document.getElementById('box1').style.backgroundColor =
+					'pink';
+				document.getElementById('box2').style.backgroundColor =
+					'white';
+				document.getElementById('box1').style.color = 'blue';
+				document.getElementById('box2').style.color = 'blue';
+			}
 
-function mouseOut() {
-  document.getElementById("message").style.backgroundColor = "white";
-  document.getElementById("message1").style.backgroundColor = "lightblue";
-  document.getElementById("message").style.color = "blue";
-  document.getElementById("message1").style.color = "blue";
-}
+			function mouseOut() {
+				document.getElementById('box1').style.backgroundColor =
+					'white';
+				document.getElementById('box2').style.backgroundColor =
+					'lightblue';
+				document.getElementById('box1').style.color = 'blue';
+				document.getElementById('box2').style.color = 'blue';
+			}
 
-window.onload
-</script>
+			window.onload;
+		</script>
 
-<style>
+		<style>
+			body {
+				background: linear-gradient(
+					to bottom,
+					#ff5050 0%,
+					#ffff00 100%
+				);
+			}
 
-body{
-      background: linear-gradient(to bottom, #ff5050 0%, #ffff00 100%);
-}
+			h1 {
+				border: 2px solid black;
+				font-size: xx-large;
+				color: black;
+				border-color: black;
+				text-align: center;
+			}
 
-h1{
-border: 2px solid black;
-font-size: xx-large;
-color: black;
-border-color: black;
-text-align: center;
-    
-}
+			h2 {
+				font-style: inherit;
+				color: red;
+			}
 
-h2{
-    font-style: inherit;
-    color: red;
-}
+			div {
+				height: 50px;
+				margin: 10px;
+				padding: 5px;
+				border-radius: 15px;
+				border: 4px solid black;
+				border-color: black;
+				font-size: x-large;
+				text-align: center;
+				width: 600px;
+			}
 
-div {
-                
-                height: 50px;
-                margin: 10px;
-                padding:5px;
-                border-radius: 15px;
-                border: 4px solid black;
-                border-color: black;
-                font-size: x-large;
-                text-align: center;
-                width: 600px;
-                
-               
-            
-            
-}
+			#message,
+			#message1 {
+				cursor: pointer;
+			}
 
-#message, #message1 {
-                cursor:pointer;
-            }
-            
-             td {
-                border:1px solid black;
-            }
-            </style>
+			td {
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Assignment 4</h1>
 
+		<div id="box1">
+			Please click the handler 1 added in JavaScript.
+		</div>
+		<br />
 
-    </head>
-<body>
+		<div id="box2">
+			Please click the handler 2 added in JavaScript.
+		</div>
+		<br />
+		<div id="message"><br /></div>
 
-<h1>Assignment 4</h1>
-        
-        <div id="message" onmouseover="mouseOver()" onmouseout="mouseOut()">Please click the handler 1 added in JavaScript.</div><br>
-
-        <div id="message1" onmouseover="mouseOver()" onmouseout="mouseOut()">Please click the handler 2 added in JavaScript.</div><br>
-    <div id="message2"><br></div>
-    
-             <footer>
-            ______________________________________________________________________________________________________<br>
-            © 2019 Ayodeji Esoimeme
-        </footer> 
+		<footer>
+			______________________________________________________________________________________________________<br />
+			© 2019 Ayodeji Esoimeme
+		</footer>
 	</body>
 </html>
-		
